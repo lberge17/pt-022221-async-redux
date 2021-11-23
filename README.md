@@ -11,6 +11,7 @@ const foo = 5 * 8 + 3 + 7
 const bar = () => 5 * 8 + 3 + 7
 ```
 
+[GitHub Codebase for redux-thunk](https://github.com/reduxjs/redux-thunk)
 
 ```  
 function createThunkMiddleware(extraArgument) {
