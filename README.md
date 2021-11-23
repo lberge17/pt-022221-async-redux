@@ -1,24 +1,31 @@
-# README
+# Async Redux (Thunk)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is a Thunk?
+- a humorous past-tense version of "think".
+- a function that wraps an expression to delay its evaluation
 
-Things you may want to cover:
+```
+const foo = 5 * 8 + 3 + 7
 
-* Ruby version
+// bar is a thunk
+const bar = () => 5 * 8 + 3 + 7
+```
 
-* System dependencies
 
-* Configuration
+```  
+function createThunkMiddleware(extraArgument) {
+  return ({ dispatch, getState }) => (next) => (action) => {
+    if (typeof action === 'function') {
+      return action(dispatch, getState, extraArgument);
+    }
 
-* Database creation
+    return next(action);
+  };
+}
 
-* Database initialization
+const thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
 
-* How to run the test suite
+export default thunk;
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
