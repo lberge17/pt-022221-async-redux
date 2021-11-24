@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PeopleContainer from './people/PeopleContainer';
+import EditPersonForm from './people/EditPersonForm';
 
 export default function Pages() {
   return (

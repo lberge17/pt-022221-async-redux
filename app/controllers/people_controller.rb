@@ -29,6 +29,7 @@ class PeopleController < ApplicationController
   # DELETE /people/1
   def destroy
     @person.destroy
+    render json: @person.id
   end
 
   private
